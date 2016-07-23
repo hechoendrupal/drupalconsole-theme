@@ -1,0 +1,103 @@
+.page-node-type-article{
+  a{
+    color: $dark-blue;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  position: relative;
+  .layout-content {
+    padding-top:0;
+    .region{
+      padding: 0;
+      text-align: center;
+      h1{
+        font-size: $font-size-h2;
+      }
+      @include media($tablet){
+        text-align: left;
+        h1{
+          font-size: $font-size-h1;
+        }
+      }
+    }
+    h1{
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .cover{
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+    &:after {
+      clear: both;
+    }
+    .field--name-field-image{
+      text-align: center;
+      img {
+        display: block;
+        width: 100vw;
+        height: em(300);
+        object-fit: cover;
+        @include media($tablet){
+          height: em(400);
+        }
+      }
+    }
+    .node__submitted{
+      font-weight: 100;
+    }
+  }
+
+  .caption{
+    h1{
+      @include media($tablet){
+        margin: em(15) 0 0;
+      }
+    }
+  }
+  .node__meta{
+    color: $medium-gray;
+    a{
+      color: $dark-blue;
+    }
+  }
+
+  .node__content{
+    @include pad(em(20) 0);
+    @include media($tablet){
+      @include pad(em(20) em(50));
+    }
+    @include media($x-desktop){
+      @include pad(em(20) 0);
+    }
+  }
+  .region-content{
+    margin-top: 0;
+  }
+  .field--name-field-tags .field__item{
+    color: $dark-blue;
+    display: inline-block;
+    margin-right: em(10);
+  }
+  .video-wrapper {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+    position: relative;
+
+    embed,
+    object,
+    iframe {
+      @include position(absolute, 0px null null 0px);
+      @include size(100%);
+    }
+  }
+
+}

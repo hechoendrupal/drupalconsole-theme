@@ -1,0 +1,32 @@
+.view-blog ,
+.view-taxonomy-term{
+  .views-row{
+    .header{
+      h2{
+        margin: em(5) 0;
+      }
+      .node__submitted{
+        margin: em(5) 0;
+      }
+    }
+    .node__content{
+      padding: 0 0 em(15);
+    }
+    .field--name-field-image{
+      text-align: center;
+      img {
+        display: block;
+      }
+    }
+    .field--name-field-tags .field__item{
+      display: inline-block;
+      margin-right: em(10);
+    }
+  }
+  .node__meta{
+    color: $medium-gray;
+    a{
+      color: $dark-blue;
+    }
+  }
+}

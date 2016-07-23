@@ -1,0 +1,352 @@
+body {
+  background: $white;
+  word-wrap: break-word;
+}
+.tabs a.is-active{
+  background: $light-gray;
+}
+
+.tabs a:focus, .tabs a:hover {
+  background: $light-gray;
+}
+
+fieldset{
+  background: none;
+}
+
+.wrapper,
+.container{
+  @include outer-container;
+  @include pad(0 em(10));
+}
+
+.block,
+.node__content{
+  @include pad(em(30) 0);
+}
+
+main{
+  padding-top: 60px;
+}
+
+.layout-container{
+  position: relative;
+}
+
+.layout-highlighted {
+  background-image: url("../images/code-bg.jpg");
+  background-size: cover;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  .page-title{
+    margin: 0;
+    padding: 0;
+  }
+  #button-install{
+    margin: 30px 0;
+  }
+  #{$all-buttons} {
+    background-color: $light-blue;
+    color: $blue;
+    &:hover,
+    &:focus {
+      background-color: shade($light-blue, 20%);
+      color: $blue;
+    }
+    &:disabled {
+      &:hover {
+        background-color: $action-color;
+      }
+    }
+  }
+}
+.path-frontpage .layout-highlighted {
+  @include media($tablet){
+    height: 100vh;
+    .region-highlighted{
+      vertical-align: middle;
+      width:100%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom:0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+#block-intro{
+  @include media ($tablet){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.layout-bottom {
+  background: $light-gray;
+  border-top: em(1) solid $light-gray;
+  border-bottom: em(1) solid $light-gray;
+}
+
+.path-frontpage header{
+  padding-bottom: 0;
+}
+
+#fork-badge{
+  display: none;
+}
+.path-frontpage #fork-badge{
+  display: block;
+  position: absolute;
+  top:0;
+  z-index: 1;
+  width: 100%;
+}
+
+.organizations {
+  @include span-columns(8);
+  @include shift(2);
+  .item {
+    text-align: center;
+    @include span-columns(4);
+    @include omega();
+  }
+}
+
+ #install-instructions{
+   @include row();
+   @include media($tablet) {
+     text-align: left;
+     width: 790px;
+     margin: 0 auto;
+   }
+   .gist-file{
+     border: none !important;
+     table{
+       span,
+       td{
+         font-size: 18px;
+       }
+     }
+   }
+ }
+
+.maintainers {
+  @include row();
+  .item {
+    text-align: center;
+    padding: em(20) 0;
+    @include media($tablet) {
+      @include span-columns(4);
+      @include omega();
+    }
+    @include media($desktop) {
+      @include span-columns(3);
+      @include omega();
+    }
+    .box {
+      width: 140px;
+      height: 140px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    .box img {
+      position: absolute;
+      left: 0;
+      @include transition(all 300ms $ease-out-quad);
+    }
+    .box .overbox {
+      width: 140px;
+      height: 140px;
+      background-color: rgba(93, 93, 93, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      @include transition(all 300ms $ease-out-quad);
+      opacity: 0;
+      padding: 40px 0px;
+      a{
+        color: #e82700;
+        font-size: em(30);
+      }
+    }
+    .box:hover .overbox { opacity: 1; }
+    h4{
+      margin: em(10) 0;
+    }
+  }
+}
+
+.contributors {
+  @include row();
+  @include outer-container;
+  .contributor {
+    text-align: center;
+    padding: em(20) 0;
+    .avatar {
+      img {
+        width: em(100);
+        height: em(100);
+        border-radius: 50%;
+      }
+    }
+    @include media($tablet) {
+      @include span-columns(2 of 12);
+      @include omega(6n);
+    }
+  }
+}
+
+.view-documentation{
+  margin-top: 30px;
+  .view-content{
+    .views-row{
+      @include media($tablet){
+        @include span-columns(4 of 12);
+        @include omega(3n);
+        text-align: center;
+        .flag-icon{
+          width: 100%;
+          height: 140px;
+        }
+      }
+    }
+  }
+}
+
+#block-drupalconsole-powered {
+  text-align: center;
+}
+
+#block-whoisbehindtheproject{
+  background: $light-gray;
+}
+#block-statistics-block{
+  background: $light-gray;
+  .statistics {
+    @include outer-container;
+    @include row();
+    .item {
+      text-align: center;
+      @include media($tablet) {
+        @include span-columns(4);
+        @include omega();
+      }
+      @include media($desktop) {
+        @include span-columns(3);
+        @include omega();
+      }
+      .icon{
+        i{
+          font-size: 4em;
+        }
+      }
+      .text {
+        h2,
+        p {
+          margin: em(5) 0;
+        }
+      }
+    }
+    margin-bottom: em(20);
+  }
+}
+
+#block-listofcontributors {
+  a {
+    text-decoration: underline;
+  }
+}
+
+.footer-links {
+  .social{
+    border-top: em(1) solid $light-gray;
+    padding: em(20) 0;
+    text-align: center;
+    a {
+      padding: 0 em(10);
+    }
+    .fa-stack-2x {
+      font-size: 3em;
+    }
+    .fa-stack-1x {
+      font-size: 2em;
+      left: 6px;
+      top: 8px;
+    }
+    #support {
+      color: $white;
+      .fa-circle {
+        color: #d60040;
+      }
+    }
+    #twitter {
+      color: $white;
+      .fa-circle {
+        color: #0096ee;
+      }
+      .fa-stack-1x {
+        left: 8px;
+        top: 10px;
+      }
+    }
+  }
+  .powered{
+    .item{
+      text-align: center;
+      img{
+        height: em(55);
+      }
+    }
+    @include media($tablet){
+      #drupal-site{
+        float: left;
+      }
+      #pantheon-site{
+        float: right;
+      }
+    }
+  }
+}
+.path-user{
+  .user-links{
+    .fa-inverse{
+      color: $white;
+    }
+  }
+}
+
+code { white-space: normal; border: none }
+
+.gist {
+  *, *::after, *::before {
+    box-sizing: initial;
+  }
+  .blob-code-inner {
+    font-size: 14px;
+    line-height: 125%;
+  }
+}
+
+#events{
+  table{
+    td{
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+    th:first-child{
+      width: 50%;
+    }
+  }
+}

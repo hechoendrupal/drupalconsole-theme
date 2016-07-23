@@ -1,0 +1,10 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      assets/dist/css/screen.css: {}
+  js:
+    assets/dist/js/init.js: {}
+    //cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery

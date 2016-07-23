@@ -1,0 +1,23 @@
+@import "../../../../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// Neat Overrides
+$column: 70px;
+$gutter: 10px;
+$grid-columns: 12;
+$max-width: 1024px;
+
+// Neat Breakpoints
+$mobile-screen: em(480);
+$tablet-screen: em(768);
+$desktop-screen: em(1024);
+$x-desktop-screen: em(1280);
+
+$mobile: new-breakpoint(min-width $mobile-screen 4);
+$tablet: new-breakpoint(min-width $tablet-screen 8);
+$desktop: new-breakpoint(min-width $desktop-screen 12);
+$x-desktop: new-breakpoint(min-width $x-desktop-screen 12);
+
+/*$visual-grid: true;*/
+$visual-grid-color: #AADBF5;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.5;

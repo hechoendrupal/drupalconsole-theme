@@ -1,0 +1,21 @@
+name: Drupal Console
+type: theme
+description: Drupal Console Theme
+package: Other
+core: 8.x
+libraries:
+  - drupalconsole/global-styling
+
+base theme: classy
+#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+
+regions:
+  content: Content
+  header: Header
+  primary_menu: Primary menu
+  footer: Footer
+  sidebar_first: Sidebar First
+  sidebar_second: Sidebar Second
+  top: Top
+  bottom: Bottom
+  highlighted: Highlighted

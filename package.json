@@ -1,0 +1,33 @@
+{
+  "name": "drupalconsole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "find node_modules -type f -name '*.info' | xargs rm;"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-globbing": "^0.1.8",
+    "gulp-csso": "^1.0.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-shell": "^0.4.3",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-watch": "^4.3.5",
+    "gulp.spritesmith": "^4.1.0",
+    "main-bower-files": "^2.9.0",
+    "merge-stream": "^1.0.0"
+  }
+}

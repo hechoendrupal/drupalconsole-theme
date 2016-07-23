@@ -1,0 +1,36 @@
+.page-node-type-documentation{
+  .node__content{
+    h2{
+      text-align: center;
+    }
+  }
+  .maintainers{
+    .profile{
+      text-align: center;
+      @include media($tablet){
+        @include span-columns(4 of 12);
+      }
+      .user-pic{
+        img{
+          width: 220px;
+          height: 220px;
+          border-radius: 50%;
+        }
+      }
+      .user-links{
+        .fa-inverse{
+          color: $white;
+        }
+      }
+    }
+    margin-bottom: em(30);
+  }
+  .link-docs{
+    li{
+      text-align: center;
+      @include media($tablet){
+        @include span-columns(3 of 12);
+      }
+    }
+  }
+}

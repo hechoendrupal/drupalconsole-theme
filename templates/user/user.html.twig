@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes.addClass('profile') }}>
+  {% if content %}
+    {% if content.user_picture %}
+      <div class="user-pic">
+        {{ content.user_picture }}
+      </div>
+    {% endif %}
+
+    <div class="name">{{ user.field_user_name[0].value }} {{ user.field_user_last_name[0].value }}</div>
+    <div class="user">{{ user.name[0].value }}</div>
+    <div class="mail">{{ user.mail[0].value }}</div>
+    <div class="user-links">
+      {% if user.field_user_website[0].uri %}
+        <a href="{{ user.field_user_website[0].uri }}" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-globe fa-stack-2x"></i>
+        </span>
+        </a>
+      {% endif %}
+
+      {% if user.field_user_facebook[0].uri %}
+        <a href="{{ user.field_user_facebook[0].uri }}" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+      {% endif %}
+
+      {% if user.field_user_twitter[0].uri %}
+        <a href="{{ user.field_user_twitter[0].uri }}" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+      {% endif %}
+
+      {% if user.field_user_github[0].uri %}
+        <a href="{{ user.field_user_github[0].uri }}" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-github fa-stack-2x"></i>
+        </span>
+        </a>
+      {% endif %}
+
+      {% if user.field_user_drupal[0].uri %}
+        <a href="{{ user.field_user_drupal[0].uri }}" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-drupal fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+      {% endif %}
+    </div>
+
+  {% endif %}
+</article>
